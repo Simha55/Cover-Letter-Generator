@@ -81,7 +81,7 @@ if st.button("Generate"):
         # job_description = "Date: " + formatted_date_with_suffix + job_description
 
         # For Static webpages
-        loader = WebBaseLoader([url_input])
+        loader = WebBaseLoader([job_link])
         job_description = loader.load().pop().page_content
         preprocessor = TextProcessor(job_description)
         job_description = preprocessor.preprocess_text()
