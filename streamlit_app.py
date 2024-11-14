@@ -50,7 +50,7 @@ We are excited to announce that our Chrome extension will be launching soon, mak
 st.info("""
 **⏳ Limitations**
 
-Please note that this application has a **6000 tokens per minute** limit in Streamlit. This functionality is only available for static webpages. For use with dynamic webpages, please clone the repository and follow the provided instructions. Be mindful of this limitation to ensure uninterrupted usage.
+Please note that this application has a **6000 tokens per minute** limit in Streamlit. This functionality is only available for static webpages. For use with dynamic webpages, **[clone the GitHub repository](https://github.com/Simha55/Cover-Letter-Generator)** and follow the provided instructions. Be mindful of this limitation to ensure uninterrupted usage.
 """)
 
 
