@@ -11,7 +11,9 @@ from dotenv import load_dotenv
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from langchain_community.document_loaders import WebBaseLoader
 from datetime import datetime
+from utils import TextProcessor
 from docx2pdf import convert
 import os
 
@@ -73,9 +75,16 @@ if st.button("Generate"):
         document_reader = DocumentReader(st.session_state.resume_file)
         resume_text = document_reader.get_processed_resume()  # Get the preprocessed resume text
 
-        # Create a JobDescriptionScraper instance and scrape the job description
-        job_desc_scraper = JobDescriptionScraper(job_link)
-        job_description = job_desc_scraper.scrape_job_description()
+        # Create a JobDescriptionScraper instance and scrape the job description (for Dynamic Webpages)
+        # job_desc_scraper = JobDescriptionScraper(job_link)
+        # job_description = job_desc_scraper.scrape_job_description()
+        # job_description = "Date: " + formatted_date_with_suffix + job_description
+
+        # For Static webpages
+        loader = WebBaseLoader([url_input])
+        job_description = loader.load().pop().page_content
+        preprocessor = TextProcessor(job_description)
+        job_description = preprocessor.preprocess_text()
         job_description = "Date: " + formatted_date_with_suffix + job_description
 
         # Display the job description if it was successfully scraped
