@@ -48,10 +48,11 @@ We are excited to announce that our Chrome extension will be launching soon, mak
 
 # Token Limit Information
 st.info("""
-**⏳ Token Limit Information**
+**⏳ Limitations**
 
-Please be aware that there is a **6000 token per minute** limit in Streamlit. Be mindful of this restriction to avoid disruptions during use.
+Please note that this application has a **6000 tokens per minute** limit in Streamlit. This functionality is only available for static webpages. For use with dynamic webpages, please clone the repository and follow the provided instructions. Be mindful of this limitation to ensure uninterrupted usage.
 """)
+
 
 # Input for the job link
 job_link = st.text_input("Enter the Job Link")
