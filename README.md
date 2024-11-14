@@ -9,8 +9,8 @@ Welcome to the **Cover Letter Generator**! This tool uses natural language proce
 - **Static Mode**: Processes job descriptions from static web pages.
 - Deployed version with support for **static web pages**.
 
-![Cover Letter Generator - Screenshot 1](path/to/screenshot1.png)
-![Cover Letter Generator - Screenshot 2](path/to/screenshot2.png)
+![Cover Letter Generator - Screenshot 1](clg1.png)
+![Cover Letter Generator - Screenshot 2](clg2.png)
 
 ## Deployed Version (Static Mode)
 Try out the app (Static Web Pages Only) here: [Cover Letter Generator](https://cover-letter-generator-1155.streamlit.app/)
@@ -83,16 +83,6 @@ Try out the app (Static Web Pages Only) here: [Cover Letter Generator](https://c
 2. **Upload Your Resume**: Upload a PDF version of your resume.
 3. **Generate Cover Letter**: Click "Generate" to create a cover letter.
 4. **Download the Cover Letter**: Use the download buttons to save your cover letter as a DOCX.
-
----
-
-## Screenshots
-
-Here's a preview of the application in action:
-
-![Cover Letter Generator - Enter Job Link](path/to/screenshot3.png)
-![Cover Letter Generator - Upload Resume](path/to/screenshot4.png)
-![Cover Letter Generator - Generated Cover Letter](path/to/screenshot5.png)
 
 ---
 
