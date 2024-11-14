@@ -17,6 +17,8 @@ from utils import TextProcessor
 from docx2pdf import convert
 import os
 
+LOADER_TYPE = "static"
+
 # Get today's date in the desired format: "November 13th, 2024"
 today = datetime.today()
 formatted_date = today.strftime("%B %d, %Y")
@@ -77,16 +79,18 @@ if st.button("Generate"):
         resume_text = document_reader.get_processed_resume()  # Get the preprocessed resume text
 
         # Create a JobDescriptionScraper instance and scrape the job description (for Dynamic Webpages)
-        # job_desc_scraper = JobDescriptionScraper(job_link)
-        # job_description = job_desc_scraper.scrape_job_description()
-        # job_description = "Date: " + formatted_date_with_suffix + job_description
+        if LOADER_TYPE == 'dynamic':
+            job_desc_scraper = JobDescriptionScraper(job_link)
+            job_description = job_desc_scraper.scrape_job_description()
+            job_description = "Date: " + formatted_date_with_suffix + job_description
 
         # For Static webpages
-        loader = WebBaseLoader([job_link])
-        job_description = loader.load().pop().page_content
-        preprocessor = TextProcessor(job_description)
-        job_description = preprocessor.preprocess_text()
-        job_description = "Date: " + formatted_date_with_suffix + job_description
+        else:
+            loader = WebBaseLoader([job_link])
+            job_description = loader.load().pop().page_content
+            preprocessor = TextProcessor(job_description)
+            job_description = preprocessor.preprocess_text()
+            job_description = "Date: " + formatted_date_with_suffix + job_description
 
         # Display the job description if it was successfully scraped
         if job_description:
